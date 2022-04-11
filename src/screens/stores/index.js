@@ -1,0 +1,13 @@
+import React from 'react';
+import { View, Text, ActivityIndicator } from 'react-native';
+
+const StoresScreen = props => {
+    return(
+        <View>
+            <Text>Stores Screen</Text>
+        </View>
+    )
+}
+
+
+export default StoresScreen;
