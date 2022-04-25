@@ -1,5 +1,5 @@
 export  const GET_STORES = 'GET_STORES';
-const baseUrl = 'http://localhost:5090/api/';
+const baseUrl = 'http://localhost:3000/api/';
 
 
 
@@ -12,10 +12,15 @@ export const get_store_dispatch = (data) => {
 
 export const get_store_action = () => {
     return async dispatch => {
-        const response = await fetch(baseUrl + 'store//getGeneralData',{
-            method: 'get'
+        const response = await fetch(baseUrl + 'store/getAllStores',{
+            method: 'GET',
+            headers: {
+               'Content-type': 'application/json'
+            }
         });
+        
         const data = await response.json();
+        console.log(data);
         if(data.status) {
             dispatch(get_store_dispatch(data));
         } else {
